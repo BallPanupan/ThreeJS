@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Canvas } from '@react-three/fiber'
-import { MeshLambertMaterial } from 'three';
+import { meshLambertMaterial } from 'three';
 
 import './App.css';
 import { Physics, useBox, usePlane } from '@react-three/cannon';
@@ -28,7 +28,7 @@ function Plane() {
 	}));
 	return (
 		<mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]}>
-			<planeBufferGeometry attach="geometry" args={[100, 100]} />
+			<planeBufferGeometry attach="geometry" args={[10, 10]} />
 			<meshLambertMaterial attach="material" color="lightblue" />
 		</mesh>
 	);
@@ -37,16 +37,19 @@ function Plane() {
 
 function App() {
   return (  
-  <Canvas>
-    <OrbitControls />
-    <Stars />
-    <ambientLight intensity={0.5} />
-    <spotLight position={[10, 15, 10]} angle={0.3} />
-    <Physics>
-      <Box />
-      <Plane />
-    </Physics>
-  </Canvas>
+	<>
+	<Canvas>
+		<OrbitControls />
+		<Stars />
+		<ambientLight intensity={0.5} />
+		<spotLight position={[10, 15, 10]} angle={0.3} />
+		<Physics>
+			<Box />
+			<Plane />
+		</Physics>
+	</Canvas>
+	<div className='newHight'/>
+  </>
   );
 }
 

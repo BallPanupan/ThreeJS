@@ -6,7 +6,7 @@ html,
 body,
 #root {
   width: 100vw;
-  height: 100vh;
+  height: 500px;
   margin: 0;
   padding: 0;
   -webkit-touch-callout: none;
@@ -22,4 +22,8 @@ body,
 body {
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
     segoe ui, arial, sans-serif;
+}
+
+.newHight {
+  height: 1000px;
 }
